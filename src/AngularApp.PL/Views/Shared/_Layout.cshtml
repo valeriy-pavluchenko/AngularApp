@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap-theme.css" />
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar navbar-inverse navbar-static-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -25,11 +25,15 @@
                     <li>@Html.ActionLink("Contacts", "Contacts", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                 </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>@Html.ActionLink("One", "Contacts", "Home")</li>
+                    <li>@Html.ActionLink("Two", "About", "Home")</li>
+                </ul>
             </div>
         </div>
-    </div>
+    </nav>
 
-    <div class="container body-content">
+    <div class="container">
         @RenderBody()
         <hr />
         <footer>

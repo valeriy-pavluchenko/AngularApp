@@ -22,5 +22,12 @@ namespace AngularApp.BL.Providers
         {
             return _context.Categories.ToList();
         }
+
+        public Category GetCategory(int id)
+        {
+            return _context.Categories
+                .Where(c => c.Id == id)
+                .SingleOrDefault();
+        }
     }
 }

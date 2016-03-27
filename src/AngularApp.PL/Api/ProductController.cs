@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
+using AngularApp.BL.Interfaces;
+using AngularApp.BL.Providers;
+using AngularApp.PL.Models.Shop;
+using AngularApp.PL.Models;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -11,18 +15,28 @@ namespace AngularApp.PL.Controllers
     [Route("api/[controller]")]
     public class ProductController : Controller
     {
-        // GET: api/values
-        [HttpGet]
-        public IEnumerable<string> Get()
+        private ICategoriesProvider _categoriesProvider;
+        private IProductsProvider _productsProvider;
+
+        public ProductController()
         {
-            return new string[] { "value1", "value2" };
+            _categoriesProvider = new CategoriesProvider();
+            _productsProvider = new ProductsProvider();
+        }
+
+        [HttpGet]
+        public List<ProductViewModel> Get()
+        {
+            var result = Mapper.ToViewModel(_productsProvider.GetAllProducts());
+
+            return result;
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public ProductViewModel Get(int id)
         {
-            return "value";
+            return Mapper.ToViewModel(_productsProvider.GetProduct(id));
         }
 
         // POST api/values

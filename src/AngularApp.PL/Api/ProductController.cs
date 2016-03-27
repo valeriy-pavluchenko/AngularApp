@@ -9,7 +9,7 @@ using Microsoft.AspNet.Mvc;
 namespace AngularApp.PL.Controllers
 {
     [Route("api/[controller]")]
-    public class ShopController : Controller
+    public class ProductController : Controller
     {
         // GET: api/values
         [HttpGet]

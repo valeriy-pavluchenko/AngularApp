@@ -7,7 +7,6 @@ using AngularApp.DAL.Contexts;
 using AngularApp.BL.Interfaces;
 using AngularApp.BL.Providers;
 
-
 // For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace AngularApp.Controllers
@@ -37,7 +36,16 @@ namespace AngularApp.Controllers
             ViewBag.N1 = _categoriesProvider.GetAllCategories();
             ViewBag.N2 = _productsProvider.GetAllProducts();
 
+            return View();
+        }
 
+        public IActionResult Contacts()
+        {
+            return View();
+        }
+
+        public IActionResult About()
+        {
             return View();
         }
     }

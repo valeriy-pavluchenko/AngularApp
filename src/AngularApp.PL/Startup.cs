@@ -53,6 +53,8 @@ namespace AngularApp.PL
                 //    name: "defaultApi",
                 //    template: "api/{controller}/{id?}");
             });
+
+            app.UseStaticFiles();
         }
 
         // Entry point for the application.

@@ -28,7 +28,7 @@ namespace AngularApp.PL.Controllers
         public List<ProductViewModel> Get()
         {
             var result = Mapper.ToViewModel(_productsProvider.GetAllProducts());
-
+            
             return result;
         }
 

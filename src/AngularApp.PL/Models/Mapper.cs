@@ -21,7 +21,7 @@ namespace AngularApp.PL.Models
                 Description = product.Description,
                 IsAvailable = product.IsAvailable,
                 CategoryId = product.CategoryId,
-                //CategoryName = 
+                CategoryName = product.Category.Name
             };
         }
 

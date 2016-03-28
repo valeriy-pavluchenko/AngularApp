@@ -43,6 +43,8 @@ namespace AngularApp.PL
         {
             DatabaseInitializer.Initialize(app.ApplicationServices);
 
+            app.UseDeveloperExceptionPage();
+            app.UseDatabaseErrorPage();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

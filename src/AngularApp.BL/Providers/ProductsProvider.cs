@@ -21,13 +21,16 @@ namespace AngularApp.BL.Providers
 
         public List<Product> GetAllProducts()
         {
-            return _context.Products.ToList();
+            return _context.Products
+                .Include(p => p.Category)
+                .ToList();
         }
 
         public Product GetProduct(int id)
         {
             return _context.Products
                 .Where(p => p.Id == id)
+                .Include(p => p.Category)
                 .SingleOrDefault();
         }
 

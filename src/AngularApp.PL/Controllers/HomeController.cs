@@ -26,7 +26,7 @@ namespace AngularApp.Controllers
         public IActionResult Index()
         {
             int count = 0;
-
+            
             using (var context = new ShopContext())
             {
                 count = context.Products.ToList().Count;

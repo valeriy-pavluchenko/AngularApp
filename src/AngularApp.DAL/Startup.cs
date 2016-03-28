@@ -13,6 +13,18 @@ using AngularApp.DAL.Initializers;
 
 namespace AngularApp.DAL
 {
+    /// <summary>
+    /// This configuration class has some code doubling in comparison with same class from PL.
+    /// This has been used for allowing adding migrations to the DAL library (the same as adding
+    /// appsettings.json to this library and use Startup.Configuration in ShopContext)
+    /// 
+    /// For enabling cmd commands defined in project.json you should execute command via win cmd: dnvm use 1.0.0-rc1-final
+    /// After it install to the project.DAL the latest version of ASP.NET Core CLR using win cmd: dnvm install latest -r coreclr
+    /// Then you can add migration to the project.DAL class library using win cmd: dnx ef migrations add MigrationName
+    /// As final step, to update database to last migration: dnx ef database update
+    /// 
+    /// However, implementing a database initializer allows to avoid much annoiyng actions.
+    /// </summary>
     public class Startup
     {
         public static IConfigurationRoot Configuration { get; set; }

@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
 using AngularApp.BL.Interfaces;
-using AngularApp.BL.Providers;
 using AngularApp.PL.Models.Shop;
 using AngularApp.PL.Models;
 
@@ -17,9 +16,9 @@ namespace AngularApp.PL.Controllers
     {
         private IProductsProvider _productsProvider;
 
-        public ProductController()
+        public ProductController(IProductsProvider productsProvider)
         {
-            _productsProvider = new ProductsProvider();
+            _productsProvider = productsProvider;
         }
 
         [HttpGet]

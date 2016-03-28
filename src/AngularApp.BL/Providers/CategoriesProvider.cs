@@ -1,5 +1,4 @@
 ﻿using AngularApp.BL.Interfaces;
-using AngularApp.DAL.Contexts;
 using AngularApp.DAL.Entities;
 using AngularApp.DAL.Interfaces;
 using System;
@@ -13,9 +12,9 @@ namespace AngularApp.BL.Providers
     {
         private IShopContext _context;
 
-        public CategoriesProvider()
+        public CategoriesProvider(IShopContext context)
         {
-            _context = new ShopContext();
+            _context = context;
         }
 
         public List<Category> GetAllCategories()

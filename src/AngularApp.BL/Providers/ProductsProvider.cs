@@ -1,5 +1,4 @@
 ﻿using AngularApp.BL.Interfaces;
-using AngularApp.DAL.Contexts;
 using AngularApp.DAL.Entities;
 using AngularApp.DAL.Interfaces;
 using Microsoft.Data.Entity;
@@ -14,9 +13,9 @@ namespace AngularApp.BL.Providers
     {
         private IShopContext _context;
 
-        public ProductsProvider()
+        public ProductsProvider(IShopContext context)
         {
-            _context = new ShopContext();
+            _context = context;
         }
 
         public List<Product> GetAllProducts()
@@ -33,8 +32,6 @@ namespace AngularApp.BL.Providers
                 .Include(p => p.Category)
                 .SingleOrDefault();
         }
-
-        
 
         public List<Product> GetProductsByCategory(int categoryId)
         {
@@ -67,7 +64,5 @@ namespace AngularApp.BL.Providers
 
             _context.SaveChanges();
         }
-
-
     }
 }

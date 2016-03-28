@@ -15,12 +15,10 @@ namespace AngularApp.PL.Controllers
     [Route("api/[controller]")]
     public class ProductController : Controller
     {
-        private ICategoriesProvider _categoriesProvider;
         private IProductsProvider _productsProvider;
 
         public ProductController()
         {
-            _categoriesProvider = new CategoriesProvider();
             _productsProvider = new ProductsProvider();
         }
 

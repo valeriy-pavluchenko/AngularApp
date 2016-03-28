@@ -8,6 +8,7 @@
     "jquery-validation-unobtrusive": "3.2.6",
     "jquery-ajax-unobtrusive": "3.2.4",
     "angular": "1.5.3",
-    "angular-resource": "1.5.3"
+    "angular-resource": "1.5.3",
+    "angular-messages": "1.5.3"
   }
 }

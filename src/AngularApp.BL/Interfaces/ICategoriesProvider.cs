@@ -9,5 +9,6 @@ namespace AngularApp.BL.Interfaces
     public interface ICategoriesProvider
     {
         List<Category> GetAllCategories();
+        Category GetCategory(int id);
     }
 }

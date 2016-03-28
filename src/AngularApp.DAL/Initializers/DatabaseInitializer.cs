@@ -10,6 +10,10 @@ using Microsoft.Data.Entity;
 
 namespace AngularApp.DAL.Initializers
 {
+    /// <summary>
+    /// It's habitual to use DB initializers after working with MVC 4 and 5
+    /// and extremelly usefull approach for debugging purposes.
+    /// </summary>
     public static class DatabaseInitializer
     {
         private static Random Random = new Random();
@@ -18,7 +22,7 @@ namespace AngularApp.DAL.Initializers
         {
             var context = serviceProvider.GetService<ShopContext>();
             var categoriesCount = 5;
-            var productsPerCategory = 5;
+            var productsPerCategory = 1;
 
             context.Database.EnsureDeleted();
             context.Database.EnsureCreated();

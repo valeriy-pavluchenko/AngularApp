@@ -80,20 +80,28 @@ namespace AngularApp.PL.Models
             };
         }
 
-        //public static List<CategoryViewModel> ToViewModel(List<Category> categories)
-        //{
-        //    foreach (var category in categories)
-        //    {
-        //        yield return ToViewModel(category);
-        //    }
-        //}
+        public static List<CategoryViewModel> ToViewModel(List<Category> categories)
+        {
+            var categoriesView = new List<CategoryViewModel>();
 
-        //public static List<Category> ToDataModel(List<CategoryViewModel> categories)
-        //{
-        //    foreach (var category in categories)
-        //    {
-        //        yield return ToDataModel(category);
-        //    }
-        //}
+            foreach (var category in categories)
+            {
+                categoriesView.Add(ToViewModel(category));
+            }
+
+            return categoriesView;
+        }
+
+        public static List<Category> ToDataModel(List<CategoryViewModel> categories)
+        {
+            var categoriesData = new List<Category>();
+
+            foreach (var category in categories)
+            {
+                categoriesData.Add(ToDataModel(category));
+            }
+
+            return categoriesData;
+        }
     }
 }

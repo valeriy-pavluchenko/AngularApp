@@ -28,7 +28,7 @@ namespace AngularApp.PL.Controllers
         public List<ProductViewModel> Get()
         {
             var result = Mapper.ToViewModel(_productsProvider.GetAllProducts());
-            
+
             return result;
         }
 
@@ -41,8 +41,10 @@ namespace AngularApp.PL.Controllers
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody]string value)
+        public void Post([FromBody]ProductViewModel product)
         {
+            var productData = Mapper.ToDataModel(product);
+            _productsProvider.AddProduct(productData);
         }
 
         // PUT api/values/5

@@ -18,7 +18,7 @@ namespace AngularApp.DAL.Initializers
         {
             var context = serviceProvider.GetService<ShopContext>();
             var categoriesCount = 5;
-            var productsPerCategory = 5;
+            var productsPerCategory = 0;
 
             context.Database.EnsureDeleted();
             context.Database.EnsureCreated();
